@@ -47,7 +47,7 @@ const Header: React.FC = () => {
       </header>
 
       {/* Mobile Header */}
-      <header className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50`}>
+      <header className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50  `}>
         {/* Mobile Top Bar */}
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
           {/* Brand/Logo Placeholder */}

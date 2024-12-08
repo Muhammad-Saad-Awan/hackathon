@@ -10,7 +10,7 @@ const poppins = Poppins({
 
 const TopPicksForYou: React.FC = () => {
   return (
-    <div className={`${poppins.className} bg-white py-8  sm:px-8 px-16    `}>
+    <div className={`${poppins.className} bg-white py-8  sm:px-8 px-16 w-full    `}>
       <h2 className="text-4xl font-bold mb-4 text-center">Top Picks For You</h2>
 
       <p className="  mb-6 pt-8 text-lg text-center">Find a bright ideal to suit your taste with our great selection of suspension, floor and table lights</p>
