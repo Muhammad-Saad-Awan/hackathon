@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -18,16 +19,24 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-gray-800 mb-2">Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="hover:text-gray-600">Home</a>
+                <Link href="/" className="hover:text-gray-600">
+                  Home
+                </Link>
               </li>
               <li>
-                <a href="/shop" className="hover:text-gray-600">Shop</a>
+                <Link href="/shop" className="hover:text-gray-600">
+                  Shop
+                </Link>
               </li>
               <li>
-                <a href="/about" className="hover:text-gray-600">About</a>
+                <Link href="/about" className="hover:text-gray-600">
+                  About
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:text-gray-600">Contact</a>
+                <Link href="/contact" className="hover:text-gray-600">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
@@ -37,13 +46,19 @@ const Footer: React.FC = () => {
             <h3 className="font-semibold text-gray-800 mb-2">Help</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/payment-options" className="hover:text-gray-600">Payment Options</a>
+                <Link href="/payment-options" className="hover:text-gray-600">
+                  Payment Options
+                </Link>
               </li>
               <li>
-                <a href="/returns" className="hover:text-gray-600">Returns</a>
+                <Link href="/returns" className="hover:text-gray-600">
+                  Returns
+                </Link>
               </li>
               <li>
-                <a href="/privacy-policies" className="hover:text-gray-600">Privacy Policies</a>
+                <Link href="/privacy-policies" className="hover:text-gray-600">
+                  Privacy Policies
+                </Link>
               </li>
             </ul>
           </div>

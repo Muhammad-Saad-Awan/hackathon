@@ -2,14 +2,11 @@ import React from "react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
- 
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
-
-
 
 export default function Third() {
   return (
@@ -38,4 +35,3 @@ export default function Third() {
     </div>
   );
 }
-
