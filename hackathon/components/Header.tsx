@@ -73,6 +73,14 @@ const Header: React.FC = () => {
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-90 z-40">
+            <button 
+      onClick={toggleMobileMenu}
+      className="absolute top-4 right-4 text-white focus:outline-none"
+    >
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
             <div className="flex flex-col items-center justify-center h-full space-y-8">
               <nav className="flex flex-col items-center space-y-6">
                  <Link href="/" className="text-white text-2xl hover:text-gray-300">Home</Link>
