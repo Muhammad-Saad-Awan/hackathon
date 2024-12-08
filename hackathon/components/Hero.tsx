@@ -10,9 +10,9 @@ const poppins = Poppins({
 export default function Hero() {
     return (
         <div className={`${poppins.className} bg-[#FBEBB5] w-[1440] h-auto font-semibold lg:pl-24 max-md:py-10 max-md:justify-center`}>
-            <div className="flex max-md:flex-col-reverse items-center ">
+            <div className="flex max-md:flex-col items-center max-md:pt-10  ">
                 {/* Text Content */}
-                <div className="pt-24 pl-24 max-md:pt-8 max-md:pl-0 max-md:text-center max-md:px-4">
+                <div className="pt-24 pl-24 max-md:pt-8 max-md:pl-0  max-md:text-center max-md:px-4">
                     <h1 className="text-6xl pb-4 text-nowrap max-md:text-4xl">Rocket Single</h1>
                     <h1 className="text-6xl pb-4 max-md:text-4xl">Seater</h1>
                     <div className="flex justify-start max-md:justify-center">

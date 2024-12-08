@@ -16,6 +16,8 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  
+
   return (
     <>
       {/* Large Screen Header */}
@@ -51,7 +53,7 @@ const Header: React.FC = () => {
         {/* Mobile Top Bar */}
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
           {/* Brand/Logo Placeholder */}
-          <div className="text-xl font-semibold">Your Brand</div>
+          <div className="text-xl font-semibold">Home Haven</div>
 
           {/* Mobile Menu Toggle */}
           <button 
