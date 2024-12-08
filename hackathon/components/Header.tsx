@@ -1,6 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import { Poppins } from 'next/font/google';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,10 +21,10 @@ const Header: React.FC = () => {
       {/* Large Screen Header */}
       <header className={`${poppins.className} hidden md:flex font-semiboldbold w-[1440px] h-[100px] justify-end px-48 items-center p-4 fixed top-0 left-0 right-0`}>
         <nav className="flex text-lg space-x-16 px-44">
-          <a href="/" className="hover:text-gray-600">Home</a>
-          <a href="/shop" className="hover:text-gray-600">Shop</a>
-          <a href="/about" className="hover:text-gray-600">About</a>
-          <a href="/contact" className="hover:text-gray-600">Contact</a>
+          <Link href="/" className="hover:text-gray-600">Home</Link>
+          <Link href="/shop" className="hover:text-gray-600">Shop</Link>
+          <Link href="/about" className="hover:text-gray-600">About</Link>
+          <Link href="/contact" className="hover:text-gray-600">Contact</Link>
         </nav>
         <div className="flex space-x-10">
           <button className="hover:text-gray-600">
@@ -77,16 +79,16 @@ const Header: React.FC = () => {
 
               <div className="flex space-x-8 mt-8">
                 <button className="hover:text-gray-300">
-                  <img className="w-8 h-8" src='/icons/account.png' alt="Account"></img>
+                  <Image src='/icons/account.png' alt="Account"  width={8} height={8}></Image>
                 </button>
                 <button className="hover:text-gray-300">
-                  <img className="w-8 h-8" src='/icons/search.png' alt="Search"></img>
+                  <Image src='/icons/search.png' alt="Search"  width={8} height={8}></Image>
                 </button>
                 <button className="hover:text-gray-300">
-                  <img className="w-8 h-8" src='/icons/wishlist.png' alt="Wishlist"></img>
+                  <Image src='/icons/wishlist.png' alt="Wishlist" width={8} height={8}></Image>
                 </button>
                 <button className="hover:text-gray-300">
-                  <img className="w-8 h-8" src='/icons/addtocard.png' alt="Cart"></img>
+                  <Image src='/icons/addtocard.png' alt="Cart"  width={8} height={8}></Image>
                 </button>
               </div>
             </div>

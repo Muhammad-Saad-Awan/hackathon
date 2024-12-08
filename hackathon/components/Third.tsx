@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 export default function Third() {
   return (
-    <div className="bg-[#FFF9E5] py-10 px-5">
+    <div className={`${poppins.className} bg-[#FFF9E5] py-10 px-5 `}>
       <div className="flex flex-col lg:flex-row items-center justify-center space-x-32">
         {/* Image Section */}
         <div className="flex justify-center">
