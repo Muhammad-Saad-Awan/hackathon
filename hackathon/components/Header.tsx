@@ -28,16 +28,20 @@ const Header: React.FC = () => {
         </nav>
         <div className="flex space-x-10">
           <button className="hover:text-gray-600">
-            <img className="fas fa-user" src='/icons/account.png' alt="Account"></img>
+            <Image  src='/icons/account.png' alt="Account" width={28} 
+            height={28}></Image>
           </button>
           <button className="hover:text-gray-600">
-            <img className="fas fa-user" src='/icons/search.png' alt="Search"></img>
+            <Image  src='/icons/search.png' alt="Search" width={28} 
+            height={28}></Image>
           </button>
           <button className="hover:text-gray-600">
-            <img className="fas fa-user" src='/icons/wishlist.png' alt="Wishlist"></img>
+            <Image  src='/icons/wishlist.png' alt="Wishlist" width={28} 
+            height={28}></Image>
           </button>
           <button className="hover:text-gray-600">
-            <img className="fas fa-user" src='/icons/addtocard.png' alt="Cart"></img>
+            <Image  src='/icons/addtocard.png' alt="Cart" width={28} 
+            height={28} ></Image>
           </button>
         </div>
       </header>
@@ -71,10 +75,10 @@ const Header: React.FC = () => {
           <div className="fixed inset-0 bg-black bg-opacity-90 z-40">
             <div className="flex flex-col items-center justify-center h-full space-y-8">
               <nav className="flex flex-col items-center space-y-6">
-                <a href="/" className="text-white text-2xl hover:text-gray-300">Home</a>
-                <a href="/shop" className="text-white text-2xl hover:text-gray-300">Shop</a>
-                <a href="/about" className="text-white text-2xl hover:text-gray-300">About</a>
-                <a href="/contact" className="text-white text-2xl hover:text-gray-300">Contact</a>
+                 <Link href="/" className="text-white text-2xl hover:text-gray-300">Home</Link>
+                 <Link href="/shop" className="text-white text-2xl hover:text-gray-300">Shop</Link>
+                 <Link href="/about" className="text-white text-2xl hover:text-gray-300">About</Link>
+                 <Link href="/contact" className="text-white text-2xl hover:text-gray-300">Contact</Link>
               </nav>
 
               <div className="flex space-x-8 mt-8">
