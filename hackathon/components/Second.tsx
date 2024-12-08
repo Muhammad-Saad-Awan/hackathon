@@ -10,10 +10,10 @@ const poppins = Poppins({
 
 const TopPicksForYou: React.FC = () => {
   return (
-    <div className={`${poppins.className} bg-white py-8 px-4 sm:px-8 md:px-16  `}>
+    <div className={`${poppins.className} bg-white py-8  sm:px-8 px-16    `}>
       <h2 className="text-4xl font-bold mb-4 text-center">Top Picks For You</h2>
 
-      <p className="  mb-6 text-lg text-center">Find a bright ideal to suit your taste with our great selection of suspension, floor and table lights</p>
+      <p className="  mb-6 pt-8 text-lg text-center">Find a bright ideal to suit your taste with our great selection of suspension, floor and table lights</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-baseline">
         <div className="bg-white  rounded-lg overflow-hidden ">
@@ -46,7 +46,7 @@ const TopPicksForYou: React.FC = () => {
         </div>
       </div>
       <div className="text-center mt-8">
-        <button className=" text-white px-4 py-2 hover:bg-green-600">View More</button>
+        <button className=" text-black text-xl border-b-2 border-b-black px-4 py-2 hover:bg-green-600">View More</button>
       </div>
     </div>
   );
