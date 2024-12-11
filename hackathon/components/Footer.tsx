@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-gray-700 py-8 px-4 md:px-20">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8   ">
         {/* Address Section */}
         <div className="text-sm text-gray-500">
           <p>400 University Drive Suite 200 Coral Gables,</p>
