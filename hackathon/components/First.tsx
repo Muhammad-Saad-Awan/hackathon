@@ -10,7 +10,7 @@ const poppins = Poppins({
 export default function First() {
   return (
     <div
-      className={`${poppins.className} flex flex-wrap  items-center  justify-center gap-12  py-12 bg-[#FAF4F4]`}
+      className={`${poppins.className} flex flex-wrap  items-center  justify-center gap-12  py-12 bg-[#FAF4F4] text-black`}
     >
       {/* First Item */}
       <div className="flex flex-col items-center w-full max-w-sm lg:max-w-md">

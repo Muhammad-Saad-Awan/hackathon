@@ -9,7 +9,7 @@ const poppins = Poppins({
 export default function Fourth() {
   return (
     <div
-      className={`${poppins.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:mx-24 text-center items-center   `}
+      className={`${poppins.className} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:mx-24 text-center items-center  text-black  `}
     >
       <div className="p-10">
         <Image

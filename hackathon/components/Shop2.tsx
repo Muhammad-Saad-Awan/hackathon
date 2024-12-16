@@ -7,7 +7,7 @@ const poppins = Poppins({
 });
 export default function Shop2(){
     return(
-        <div className={`${poppins.className} bg-[#FAF4F4] h-auto py-4`}>
+        <div className={`${poppins.className} bg-[#FAF4F4] h-auto py-4 text-black `}>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-baseline mx-16">
             <div className="col-span-full flex flex-col sm:flex-row justify-between items-center w-full">
               <div className="flex flex-row items-center gap-4 sm:gap-7">

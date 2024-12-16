@@ -1,5 +1,5 @@
-"use client";
-import React, { useState } from "react";
+ "use client";
+import React, { useState, useEffect } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,6 +11,33 @@ const poppins = Poppins({
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Hide header completely after scrolling down
+      if (currentScrollY > 50) {
+        setIsHeaderVisible(false);
+        setIsMobileMenuOpen(false); // Close mobile menu when scrolling
+      } else if (currentScrollY === 0) {
+        // Show header only when at the top of the page
+        setIsHeaderVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -20,7 +47,9 @@ const Header: React.FC = () => {
     <>
       {/* Large Screen Header */}
       <header
-        className={`${poppins.className} hidden md:flex font-semiboldbold w-[1440px] h-[100px] justify-end px-48 items-center p-4 fixed top-0 left-0 right-0`}
+        className={`${poppins.className} hidden md:flex font-semiboldbold w-[1440px] h-[100px] text-black  justify-end px-48 items-center p-4 fixed top-0 left-0 right-0 transition-transform duration-300 ${
+          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
       >
         <nav className="flex text-lg space-x-16 px-44">
           <Link href="/" className="hover:text-gray-600">
@@ -43,7 +72,7 @@ const Header: React.FC = () => {
               alt="Account"
               width={28}
               height={28}
-            ></Image>
+            />
           </button>
           <button className="hover:text-gray-600">
             <Image
@@ -51,7 +80,7 @@ const Header: React.FC = () => {
               alt="Search"
               width={28}
               height={28}
-            ></Image>
+            />
           </button>
           <button className="hover:text-gray-600">
             <Image
@@ -59,7 +88,7 @@ const Header: React.FC = () => {
               alt="Wishlist"
               width={28}
               height={28}
-            ></Image>
+            />
           </button>
           <button className="hover:text-gray-600">
             <Image
@@ -67,14 +96,16 @@ const Header: React.FC = () => {
               alt="Cart"
               width={28}
               height={28}
-            ></Image>
+            />
           </button>
         </div>
       </header>
 
       {/* Mobile Header */}
       <header
-        className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50  `}
+        className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+        }`}
       >
         {/* Mobile Top Bar */}
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
@@ -154,7 +185,7 @@ const Header: React.FC = () => {
                   Shop
                 </Link>
                 <Link
-                  href="/about"
+                  href="/account"
                   className="text-white text-2xl hover:text-gray-300"
                 >
                   About
@@ -172,33 +203,33 @@ const Header: React.FC = () => {
                   <Image
                     src="/icons/account.png"
                     alt="Account"
-                    width={8}
-                    height={8}
-                  ></Image>
+                    width={28}
+                    height={28}
+                  />
                 </button>
                 <button className="hover:text-gray-300">
                   <Image
                     src="/icons/search.png"
                     alt="Search"
-                    width={8}
-                    height={8}
-                  ></Image>
+                    width={28}
+                    height={28}
+                  />
                 </button>
                 <button className="hover:text-gray-300">
                   <Image
                     src="/icons/wishlist.png"
                     alt="Wishlist"
-                    width={8}
-                    height={8}
-                  ></Image>
+                    width={28}
+                    height={28}
+                  />
                 </button>
                 <button className="hover:text-gray-300">
                   <Image
                     src="/icons/addtocard.png"
                     alt="Cart"
-                    width={8}
-                    height={8}
-                  ></Image>
+                    width={28}
+                    height={28}
+                  />
                 </button>
               </div>
             </div>

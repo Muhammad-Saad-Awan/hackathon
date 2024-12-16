@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-white text-gray-700 py-8 px-4 md:px-20">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8   ">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black  ">
         {/* Address Section */}
         <div className="text-sm text-gray-500">
           <p>400 University Drive Suite 200 Coral Gables,</p>
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
           {/* Links Column */}
           <div>
-            <h3 className="font-semibold text-gray-800 mb-2">Links</h3>
+            <h3 className="font-semibold text-gray-400 mb-2">Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="hover:text-gray-600">
@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
 
           {/* Help Column */}
           <div>
-            <h3 className="font-semibold text-gray-800 mb-2">Help</h3>
+            <h3 className="font-semibold text-gray-400 mb-2">Help</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/payment-options" className="hover:text-gray-600">
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
         {/* Newsletter Section */}
         <div>
-          <h3 className="font-semibold text-gray-800 mb-2">Newsletter</h3>
+          <h3 className="font-semibold text-gray-400 mb-2">Newsletter</h3>
           <form className="flex items-center">
             <input
               type="email"

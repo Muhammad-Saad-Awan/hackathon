@@ -10,7 +10,7 @@ const poppins = Poppins({
 const InstagramSection: React.FC = () => {
   return (
     <section
-      className={`${poppins.className} relative w-full h-96 flex items-center justify-center`}
+      className={`${poppins.className} relative w-full h-96 flex items-center justify-center text-black`}
     >
       <Image
         src="/icons/Fifth.png"

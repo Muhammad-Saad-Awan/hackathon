@@ -11,7 +11,7 @@ const poppins = Poppins({
 const TopPicksForYou: React.FC = () => {
   return (
     <div
-      className={`${poppins.className} bg-white py-8  sm:px-8 px-16 w-full    `}
+      className={`${poppins.className} bg-white py-8  sm:px-8 px-16 w-full  text-black   `}
     >
       <h2 className="text-4xl font-bold mb-4 text-center">Top Picks For You</h2>
 
