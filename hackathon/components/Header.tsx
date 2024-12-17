@@ -1,4 +1,4 @@
- "use client";
+"use client";
 import React, { useState, useEffect } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Hide header completely after scrolling down
       if (currentScrollY > 50) {
         setIsHeaderVisible(false);
@@ -31,11 +31,11 @@ const Header: React.FC = () => {
     };
 
     // Add scroll event listener
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     // Cleanup event listener
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
@@ -43,12 +43,16 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <>
       {/* Large Screen Header */}
       <header
-        className={`${poppins.className} hidden md:flex font-semiboldbold w-[1440px] h-[100px] text-black  justify-end px-48 items-center p-4 fixed top-0 left-0 right-0 transition-transform duration-300 ${
-          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+        className={`${poppins.className} hidden md:flex font-semibold w-[1440px] h-[100px] text-black justify-end px-48 items-center p-4 fixed top-0 left-0 right-0 transition-transform duration-300 ${
+          isHeaderVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <nav className="flex text-lg space-x-16 px-44">
@@ -103,9 +107,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Header */}
       <header
-        className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50`}
       >
         {/* Mobile Top Bar */}
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
@@ -150,7 +152,8 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-90 z-40">
+          <div className="fixed inset-0 bg-black bg-opacity-90 z-40 flex flex-col justify-center items-center">
+            {/* Close Button */}
             <button
               onClick={toggleMobileMenu}
               className="absolute top-4 right-4 text-white focus:outline-none"
@@ -170,68 +173,73 @@ const Header: React.FC = () => {
                 />
               </svg>
             </button>
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              <nav className="flex flex-col items-center space-y-6">
-                <Link
-                  href="/"
-                  className="text-white text-2xl hover:text-gray-300"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/shop"
-                  className="text-white text-2xl hover:text-gray-300"
-                >
-                  Shop
-                </Link>
-                <Link
-                  href="/account"
-                  className="text-white text-2xl hover:text-gray-300"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-white text-2xl hover:text-gray-300"
-                >
-                  Contact
-                </Link>
-              </nav>
 
-              <div className="flex space-x-8 mt-8">
-                <button className="hover:text-gray-300">
-                  <Image
-                    src="/icons/account.png"
-                    alt="Account"
-                    width={28}
-                    height={28}
-                  />
-                </button>
-                <button className="hover:text-gray-300">
-                  <Image
-                    src="/icons/search.png"
-                    alt="Search"
-                    width={28}
-                    height={28}
-                  />
-                </button>
-                <button className="hover:text-gray-300">
-                  <Image
-                    src="/icons/wishlist.png"
-                    alt="Wishlist"
-                    width={28}
-                    height={28}
-                  />
-                </button>
-                <button className="hover:text-gray-300">
-                  <Image
-                    src="/icons/addtocard.png"
-                    alt="Cart"
-                    width={28}
-                    height={28}
-                  />
-                </button>
-              </div>
+            {/* Mobile Links */}
+            <nav className="flex flex-col items-center space-y-6">
+              <Link
+                href="/"
+                onClick={closeMobileMenu}
+                className="text-white text-2xl hover:text-gray-300"
+              >
+                Home
+              </Link>
+              <Link
+                href="/shop"
+                onClick={closeMobileMenu}
+                className="text-white text-2xl hover:text-gray-300"
+              >
+                Shop
+              </Link>
+              <Link
+                href="/about"
+                onClick={closeMobileMenu}
+                className="text-white text-2xl hover:text-gray-300"
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
+                className="text-white text-2xl hover:text-gray-300"
+              >
+                Contact
+              </Link>
+            </nav>
+
+            {/* Icons */}
+            <div className="flex space-x-8 mt-8">
+              <button>
+                <Image
+                  src="/icons/account.png"
+                  alt="Account"
+                  width={28}
+                  height={28}
+                />
+              </button>
+              <button>
+                <Image
+                  src="/icons/search.png"
+                  alt="Search"
+                  width={28}
+                  height={28}
+                />
+              </button>
+              <button>
+                <Image
+                  src="/icons/wishlist.png"
+                  alt="Wishlist"
+                  width={28}
+                  height={28}
+                />
+              </button>
+              <button>
+                <Image
+                  src="/icons/addtocard.png"
+                  alt="Cart"
+                  width={28}
+                  height={28}
+                />
+              </button>
             </div>
           </div>
         )}
