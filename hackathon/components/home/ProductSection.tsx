@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../Container';
-import Link from 'next/link';
+
 
 function ProductSection({title, description,btnText,children,btnTo="/shop" }:{title:string; description?:string; btnText:string;children: React.ReactNode;btnTo?:string; }) {
   return (
