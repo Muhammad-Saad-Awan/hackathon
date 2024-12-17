@@ -40,14 +40,14 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
   <Link href={`/shop/${product.id}`}>
     <div
-      className={`${poppins.className} my-8 bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300`}
+      className={`${poppins.className} my-8   bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 mx-auto`}
     >
       <Image
         src={product.image}
         alt={product.name}
         width={240}
         height={174}
-        className="w-full h-48 object-cover"
+        className="h-48"
       />
       <div className="p-3 my-2">
         <h3 className="text-center text-xs text-gray-700 truncate my-3">{product.name}</h3>
@@ -67,25 +67,73 @@ export default function Shop3() {
           ))}
         </div>
         <div className="h-16 text-xl flex flex-row gap-4 justify-center items-center m-2">
-          <button className="h-14 w-14 p-2">1</button>
-          <button className="h-14 w-14 p-2">2</button>
-          <button className="h-14 w-14 p-2">3</button>
-          <button className="h-14 w-24 p-2">Next</button>
-        </div>
-        <div className="bg-[#FAF4F4] h-72 p-24 flex flex-row justify-between my-4">
-          <div className="mx-5">
-            <h1 className="text-2xl font-bold py-1">Free Delivery</h1>
-            <p className="text-lg">For all orders over $50, consectetur adipiscing elit.</p>
-          </div>
-          <div className="mx-5">
-            <h1 className="text-2xl font-bold py-1">90 Days Return</h1>
-            <p className="text-lg">If goods have problems, consectetur adipiscing elit.</p>
-          </div>
-          <div className="mx-5">
-            <h1 className="text-2xl font-bold py-1">Secure Payment</h1>
-            <p className="text-lg">100% secure payment, consectetur adipiscing elit.</p>
-          </div>
-        </div>
+      <button className="h-14 w-14 p-2 
+        bg-white text-black 
+        border border-gray-300 
+        hover:bg-gray-100 
+        hover:border-gray-400 
+        transition-colors 
+        duration-200 
+        active:bg-gray-200 
+        rounded-md 
+        shadow-sm 
+        hover:shadow-md">
+        1
+      </button>
+      <button className="h-14 w-14 p-2 
+        bg-white text-black 
+        border border-gray-300 
+        hover:bg-gray-100 
+        hover:border-gray-400 
+        transition-colors 
+        duration-200 
+        active:bg-gray-200 
+        rounded-md 
+        shadow-sm 
+        hover:shadow-md">
+        2
+      </button>
+      <button className="h-14 w-14 p-2 
+        bg-white text-black 
+        border border-gray-300 
+        hover:bg-gray-100 
+        hover:border-gray-400 
+        transition-colors 
+        duration-200 
+        active:bg-gray-200 
+        rounded-md 
+        shadow-sm 
+        hover:shadow-md">
+        3
+      </button>
+      <button className="h-14 w-24 p-2 
+        bg-white text-black 
+        border border-gray-300 
+        hover:bg-gray-100 
+        hover:border-gray-400 
+        transition-colors 
+        duration-200 
+        active:bg-gray-200 
+        rounded-md 
+        shadow-sm 
+        hover:shadow-md">
+        Next
+      </button>
+    </div>
+    <div className="bg-[#FAF4F4] p-6 sm:p-10 md:p-16 lg:p-24 flex flex-row max-md:flex-col max-md:items-center max-md:text-center max-md:gap-y-5 justify-between my-4">
+      <div className="mx-2 sm:mx-3 md:mx-4 lg:mx-5 max-w-xs">
+        <h1 className="text-xl sm:text-2xl font-bold py-1">Free Delivery</h1>
+        <p className="text-base sm:text-lg text-gray-700">For all orders over $50, consectetur adipiscing elit.</p>
+      </div>
+      <div className="mx-2 sm:mx-3 md:mx-4 lg:mx-5 max-w-xs">
+        <h1 className="text-xl sm:text-2xl font-bold py-1">90 Days Return</h1>
+        <p className="text-base sm:text-lg text-gray-700">If goods have problems, consectetur adipiscing elit.</p>
+      </div>
+      <div className="mx-2 sm:mx-3 md:mx-4 lg:mx-5 max-w-xs">
+        <h1 className="text-xl sm:text-2xl font-bold py-1">Secure Payment</h1>
+        <p className="text-base sm:text-lg text-gray-700">100% secure payment, consectetur adipiscing elit.</p>
+      </div>
+    </div>
       </div>
     </div>
   );

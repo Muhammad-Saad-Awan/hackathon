@@ -10,7 +10,7 @@ export default function Shop1(){
     return(
         
              <section
-      className={`${poppins.className} relative w-full h-[316px] flex items-center justify-center mt-20 text-black `}
+      className={`${poppins.className} relative w-full  flex items-center justify-center  mt-20 p-8 text-black `}
     >
       <Image
         src="/icons/Shop.png"
@@ -31,14 +31,14 @@ export default function Shop1(){
         width={77}
         height={77}
         quality={100}
-        className="mx-6"
+        className="" 
       />
         <h1 className="text-4xl lg:text-5xl font-semibold mb-3 text-nowrap  ">
            Shop 
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link href=""><span className="font-semibold pr-2  ">Home &gt;</span>Shop</Link>
+          <Link className="font-semibold" href="">  Home &gt;  Shop</Link>
         </button>
       </div>
       
