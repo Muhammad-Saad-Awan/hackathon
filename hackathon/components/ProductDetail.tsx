@@ -3,6 +3,11 @@ import React from "react";
 import { Star, Facebook, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Container from "./Container";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
 
 const ProductDetail = ({
   name,
@@ -42,7 +47,7 @@ const ProductDetail = ({
 
   return (
     <Container>
-      <div className="w-full mx-auto md:px-4 py-8 grid md:grid-cols-2 gap-8">
+      <div className={`${poppins.className} mt-20    w-full mx-auto md:px-4 py-8 grid justify-between md:grid-cols-2 gap-8`}>
         {/* Image Gallery */}
         <div className="flex gap-2 w-full max-md:flex-col">
           <div className="md:order-2 p-2">
@@ -121,6 +126,23 @@ const ProductDetail = ({
             </div>
              
           </div>
+
+          <button className="
+        px-6 
+        py-3 
+        bg-white 
+        text-black 
+        text-base 
+        rounded-lg 
+        hover:bg-black
+        hover:text-white 
+        hover:border-white
+        border-2
+        border-black
+        
+    ">
+        Add To Cart
+    </button>
 
           <div className="md:w-96 w-full py-9 border-t text-sm text-[#9F9F9F] border-t-black/50 grid grid-cols-2 gap-2">
             <span>SKU </span>
