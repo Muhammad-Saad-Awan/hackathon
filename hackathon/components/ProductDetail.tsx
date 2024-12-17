@@ -28,7 +28,7 @@ const ProductDetail = ({
 }) => {
   const renderStars = (count = 4.5) => {
     return (
-      <div className="flex items-center text-[#FFDA5B]">
+      <div className="flex items-center  text-[#FFDA5B]">
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
@@ -47,7 +47,7 @@ const ProductDetail = ({
 
   return (
     <Container>
-      <div className={`${poppins.className} mt-20    w-full mx-auto md:px-4 py-8 grid justify-between md:grid-cols-2 gap-8`}>
+      <div className={`${poppins.className} mt-20  lg:mx-24  w-full mx-auto md:px-4 py-8 grid justify-between md:grid-cols-2 gap-8`}>
         {/* Image Gallery */}
         <div className="flex gap-2 w-full max-md:flex-col">
           <div className="md:order-2 p-2">
