@@ -17,6 +17,7 @@ export default function ShopFilter() {
               <div className="flex items-center gap-3">
                 <Image 
                   src="/icons/shop2filter.png" 
+                  
                   alt="Filter icon" 
                   width={25} 
                   height={25} 

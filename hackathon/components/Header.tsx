@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import React, { useState, useEffect } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
@@ -18,22 +18,18 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Hide header completely after scrolling down
       if (currentScrollY > 50) {
         setIsHeaderVisible(false);
-        setIsMobileMenuOpen(false); // Close mobile menu when scrolling
+        setIsMobileMenuOpen(false);
       } else if (currentScrollY === 0) {
-        // Show header only when at the top of the page
         setIsHeaderVisible(true);
       }
 
       setLastScrollY(currentScrollY);
     };
 
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Cleanup event listener
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -71,20 +67,17 @@ const Header: React.FC = () => {
         </nav>
         <div className="flex space-x-10">
           <button className="hover:text-gray-600">
-            <Image
-              src="/icons/account.png"
-              alt="Account"
-              width={28}
-              height={28}
-            />
+            <Link href="/account">
+              <Image
+                src="/icons/account.png"
+                alt="Account"
+                width={28}
+                height={28}
+              />
+            </Link>
           </button>
           <button className="hover:text-gray-600">
-            <Image
-              src="/icons/search.png"
-              alt="Search"
-              width={28}
-              height={28}
-            />
+            <Image src="/icons/search.png" alt="Search" width={28} height={28} />
           </button>
           <button className="hover:text-gray-600">
             <Image
@@ -95,12 +88,14 @@ const Header: React.FC = () => {
             />
           </button>
           <button className="hover:text-gray-600">
-            <Image
-              src="/icons/addtocard.png"
-              alt="Cart"
-              width={28}
-              height={28}
-            />
+            <Link href="/cheakout">
+              <Image
+                src="/icons/addtocard.png"
+                alt="Cart"
+                width={28}
+                height={28}
+              />
+            </Link>
           </button>
         </div>
       </header>
@@ -109,51 +104,86 @@ const Header: React.FC = () => {
       <header
         className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50`}
       >
-        {/* Mobile Top Bar */}
         <div className="flex justify-between items-center p-4 bg-white shadow-md">
-          {/* Brand/Logo Placeholder */}
           <div className="text-xl font-semibold">Home Haven</div>
-
-          {/* Mobile Menu Toggle */}
-          <button onClick={toggleMobileMenu} className="focus:outline-none">
-            {isMobileMenuOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
+          <div className="flex items-center space-x-4">
+            <div className="flex justify-around space-x-4">
+              <button className="hover:text-gray-600 ">
+                <Link href="/account">
+                  <Image
+                    src="/icons/account.png"
+                    alt="Account"
+                    width={22}
+                    height={22}
+                  />
+                </Link>
+              </button>
+              <button className="hover:text-gray-600">
+                <Image
+                  src="/icons/search.png"
+                  alt="Search"
+                  width={22}
+                  height={22}
                 />
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
+              </button>
+              <button className="hover:text-gray-600">
+                <Image
+                  src="/icons/wishlist.png"
+                  alt="Wishlist"
+                  width={22}
+                  height={22}
                 />
-              </svg>
-            )}
-          </button>
+              </button>
+              <button className="hover:text-gray-600">
+                <Link href="/cheakout">
+                  <Image
+                    src="/icons/addtocard.png"
+                    alt="Cart"
+                    width={22}
+                    height={22}
+                  />
+                </Link>
+              </button>
+            </div>
+            <button onClick={toggleMobileMenu} className="focus:outline-none">
+              {isMobileMenuOpen ? (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-90 z-40 flex flex-col justify-center items-center">
-            {/* Close Button */}
             <button
               onClick={toggleMobileMenu}
               className="absolute top-4 right-4 text-white focus:outline-none"
@@ -174,7 +204,6 @@ const Header: React.FC = () => {
               </svg>
             </button>
 
-            {/* Mobile Links */}
             <nav className="flex flex-col items-center space-y-6">
               <Link
                 href="/"
@@ -205,42 +234,6 @@ const Header: React.FC = () => {
                 Contact
               </Link>
             </nav>
-
-            {/* Icons */}
-            <div className="flex space-x-8 mt-8">
-              <button>
-                <Image
-                  src="/icons/account.png"
-                  alt="Account"
-                  width={28}
-                  height={28}
-                />
-              </button>
-              <button>
-                <Image
-                  src="/icons/search.png"
-                  alt="Search"
-                  width={28}
-                  height={28}
-                />
-              </button>
-              <button>
-                <Image
-                  src="/icons/wishlist.png"
-                  alt="Wishlist"
-                  width={28}
-                  height={28}
-                />
-              </button>
-              <button>
-                <Image
-                  src="/icons/addtocard.png"
-                  alt="Cart"
-                  width={28}
-                  height={28}
-                />
-              </button>
-            </div>
           </div>
         )}
       </header>

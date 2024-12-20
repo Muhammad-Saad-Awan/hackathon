@@ -6,7 +6,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
-export default function Shop1(){
+export default function Account1(){
     return(
         
              <section
@@ -24,7 +24,7 @@ export default function Shop1(){
       <div className="absolute inset-0  bg-opacity-70"></div>
 
       {/* Text Content */}
-      <div className=" text-center flex flex-col justify-center  max-w-sm  lg:text-left max-sm:mr-11 place-items-center ">
+      <div className=" text-center flex flex-col justify-center place-items-center  max-w-sm  lg:text-left max-sm:mr-11   ">
       <Image
         src="/icons/shoplogo.png"
         alt="Background"
@@ -34,11 +34,11 @@ export default function Shop1(){
         className="" 
       />
         <h1 className="text-4xl lg:text-5xl font-semibold mb-3 text-nowrap  ">
-           Shop 
+           My Account
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link className="font-semibold" href="">  Home &gt;  Shop</Link>
+          <Link className="font-semibold" href="">  Home &gt; My Account</Link>
         </button>
       </div>
       

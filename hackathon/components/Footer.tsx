@@ -1,10 +1,15 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["400", "600", "700"],
+  });
+  
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white text-gray-700 py-8 px-4 md:px-20">
+    <footer className={`${poppins.className} bg-white text-gray-700 py-8 px-4 md:px-20`}>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 text-black  ">
         {/* Address Section */}
         <div className="text-sm text-gray-500">
@@ -15,16 +20,16 @@ const Footer: React.FC = () => {
         {/* Links Section */}
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
           {/* Links Column */}
-          <div>
+          <div className="flex flex-col gap-4">
             <h3 className="font-semibold text-gray-400 mb-2">Links</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-8">
               <li>
-                <Link href="/" className="hover:text-gray-600">
+                <Link href="/" className="hover:text-gray-600 py-4">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/shop" className="hover:text-gray-600">
+                <Link href="/shop" className="hover:text-gray-600 ">
                   Shop
                 </Link>
               </li>
@@ -42,9 +47,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Help Column */}
-          <div>
+          <div className="flex flex-col gap-4">
             <h3 className="font-semibold text-gray-400 mb-2">Help</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-8">
               <li>
                 <Link href="/payment-options" className="hover:text-gray-600">
                   Payment Options
