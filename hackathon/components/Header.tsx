@@ -88,7 +88,7 @@ const Header: React.FC = () => {
             />
           </button>
           <button className="hover:text-gray-600">
-            <Link href="/cheakout">
+            <Link href="/cart">
               <Image
                 src="/icons/addtocard.png"
                 alt="Cart"
@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                 />
               </button>
               <button className="hover:text-gray-600">
-                <Link href="/cheakout">
+                <Link href="/cart">
                   <Image
                     src="/icons/addtocard.png"
                     alt="Cart"

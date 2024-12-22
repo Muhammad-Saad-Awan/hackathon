@@ -1,10 +1,12 @@
-"use client"
-import React from 'react';
+ "use client"
+import React, { useState } from 'react';
 import { Poppins } from "next/font/google";
+import { useCart } from './CardContext';
+
 const poppins = Poppins({
     subsets: ["latin"],
     weight: ["400", "600", "700"],
-  });
+});
 
 interface FormData {
   firstName: string;
@@ -21,30 +23,41 @@ interface FormData {
 }
 
 interface BillingDetailsFormProps {
-  onSubmit?: (data: FormData) => void;  // Made optional with ?
+  onSubmit?: (data: FormData) => void;
 }
 
 const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({ 
-  onSubmit = () => {} // Default empty function
+  onSubmit = () => {}
 }) => {
+  const { cartItems, getCartTotal } = useCart();
+  const [formData, setFormData] = useState<FormData>({
+    firstName: '',
+    lastName: '',
+    countryRegion: 'Sri Lanka',
+    streetAddress: '',
+    townCity: '',
+    province: 'Western Province',
+    zipCode: '',
+    phone: '',
+    email: '',
+    additionalInfo: '',
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic here
-    onSubmit({
-      firstName: '',
-      lastName: '',
-      countryRegion: '',
-      streetAddress: '',
-      townCity: '',
-      province: '',
-      zipCode: '',
-      phone: '',
-      email: '',
-    });
+    onSubmit(formData);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
-    <div className={` ${poppins.className} max-w-6xl mx-auto p-6 mt-6`}>
+    <div className={`${poppins.className} max-w-6xl mx-auto p-6 mt-6`}>
       <h1 className="text-2xl font-bold mb-8">Billing details</h1>
       
       <div className="flex flex-col lg:flex-row gap-8">
@@ -55,7 +68,11 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
                 <label className="text-sm font-medium">First Name</label>
                 <input
                   type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
                   className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  required
                 />
               </div>
               
@@ -63,7 +80,11 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
                 <label className="text-sm font-medium">Last Name</label>
                 <input
                   type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
                   className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                  required
                 />
               </div>
             </div>
@@ -72,13 +93,21 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
               <label className="text-sm font-medium">Company Name (Optional)</label>
               <input
                 type="text"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleInputChange}
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium">Country / Region</label>
-              <select className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+              <select 
+                name="countryRegion"
+                value={formData.countryRegion}
+                onChange={handleInputChange}
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+              >
                 <option value="Sri Lanka">Sri Lanka</option>
               </select>
             </div>
@@ -87,7 +116,11 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
               <label className="text-sm font-medium">Street address</label>
               <input
                 type="text"
+                name="streetAddress"
+                value={formData.streetAddress}
+                onChange={handleInputChange}
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                required
               />
             </div>
 
@@ -95,13 +128,22 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
               <label className="text-sm font-medium">Town / City</label>
               <input
                 type="text"
+                name="townCity"
+                value={formData.townCity}
+                onChange={handleInputChange}
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                required
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium">Province</label>
-              <select className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+              <select 
+                name="province"
+                value={formData.province}
+                onChange={handleInputChange}
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white"
+              >
                 <option value="Western Province">Western Province</option>
               </select>
             </div>
@@ -110,7 +152,11 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
               <label className="text-sm font-medium">ZIP code</label>
               <input
                 type="text"
+                name="zipCode"
+                value={formData.zipCode}
+                onChange={handleInputChange}
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                required
               />
             </div>
 
@@ -118,7 +164,11 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
               <label className="text-sm font-medium">Phone</label>
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                required
               />
             </div>
 
@@ -126,37 +176,50 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
               <label className="text-sm font-medium">Email address</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                required
               />
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium">Additional information</label>
               <textarea
-                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none 
-                 min-h-[100px]"
+                name="additionalInfo"
+                value={formData.additionalInfo}
+                onChange={handleInputChange}
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none min-h-[100px]"
               />
             </div>
           </form>
         </div>
 
-        <div className="flex-1 ">
+        <div className="flex-1">
           <div className="bg-gray-50 p-6 rounded-lg border">
             <div className="space-y-4">
-
-            <div className="flex justify-between items-center text-xl font-semibold">
+              <div className="flex justify-between items-center text-xl font-semibold">
                 <span>Product</span>
                 <span>Sub Total</span>
               </div>
+              
+              {/* Display cart items */}
+              {cartItems.map((item) => (
+                <div key={item.id} className="flex justify-between items-center text-sm">
+                  <span>{item.name} × {item.quantity}</span>
+                  <span>Rs. {(item.price * item.quantity).toLocaleString()}</span>
+                </div>
+              ))}
                 
               <div className="flex justify-between items-center text-sm">
                 <span>Subtotal</span>
-                <span>Rs. 250,000.00</span>
+                <span>Rs. {getCartTotal().toLocaleString()}</span>
               </div>
               
               <div className="flex justify-between items-center font-medium">
                 <span>Total</span>
-                <span className="text-amber-500">Rs. 250,000.00</span>
+                <span className="text-amber-500">Rs. {getCartTotal().toLocaleString()}</span>
               </div>
 
               <div className="space-y-4 mt-6">
@@ -192,6 +255,7 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
 
                 <button
                   type="submit"
+                  onClick={handleSubmit}
                   className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors"
                 >
                   Place order

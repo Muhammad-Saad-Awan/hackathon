@@ -4,7 +4,7 @@ export default function cheakout(){
     return(
         <div>
             <Cheakout1></Cheakout1>
-          <BillingDetailsForm></BillingDetailsForm>
+          <BillingDetailsForm/>
           
         </div>
     )
