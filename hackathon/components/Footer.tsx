@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
         {/* Newsletter Section */}
         <div>
           <h3 className="font-semibold text-gray-400 mb-2">Newsletter</h3>
-          <form className="flex items-center">
+          <form className="flex items-center max-md:max-w-3xl mx-auto ">
             <input
               type="email"
               placeholder="Enter Your Email Address"
