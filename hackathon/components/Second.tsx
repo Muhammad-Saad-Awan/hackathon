@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -79,8 +79,10 @@ const TopPicksForYou: React.FC = () => {
         </div>
       </div>
       <div className="text-center mt-8">
-        <button className=" text-black text-xl border-b-2 border-b-black px-4 py-2 hover:bg-green-600">
+        <button className=" text-black text-xl border-b-2 border-b-black px-4 py-2 hover:bg-black hover:text-white">
+          <Link href="/shop">
           View More
+          </Link>
         </button>
       </div>
     </div>

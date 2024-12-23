@@ -70,9 +70,9 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Newsletter Section */}
-        <div>
+        <div className="  ">
           <h3 className="font-semibold text-gray-400 mb-2">Newsletter</h3>
-          <form className="flex items-center max-md:max-w-3xl mx-auto ">
+          <form className="flex flex-col max-md:gap-y-5  lg:flex-row items-center max-md:justify-center max-md:max-w-3xl  mx-2 mr-4  ">
             <input
               type="email"
               placeholder="Enter Your Email Address"

@@ -15,7 +15,7 @@ const AddToCart: React.FC = () => {
 
   return (
     <div className={`${poppins.className}`}>
-      <div className="p-4 lg:p-8 flex flex-col lg:flex-row justify-between max-w-6xl mx-auto mt-8">
+      <div className=" py-4 lg:p-8 flex flex-col lg:flex-row justify-between   mt-8">
         {/* Cart Items Table */}
         <div className="w-full lg:w-2/3">
           <table className="w-full border-collapse">
@@ -25,13 +25,13 @@ const AddToCart: React.FC = () => {
                 <th className="p-2 lg:p-4">Price</th>
                 <th className="p-2 lg:p-4">Quantity</th>
                 <th className="p-2 lg:p-4">Subtotal</th>
-                <th className="p-2 lg:p-4"></th>
+                 
               </tr>
             </thead>
             <tbody>
               {cartItems.map((item) => (
                 <tr key={item.id} className="border-b">
-                  <td className="p-2 lg:p-4 flex items-center gap-2 text-[#9F9F9F]">
+                  <td className="p-2 lg:p-4 flex flex-col  items-center gap-2 text-[#9F9F9F]">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -71,15 +71,15 @@ const AddToCart: React.FC = () => {
         </div>
 
         {/* Cart Totals */}
-        <div className="w-full lg:w-1/3 mt-8 lg:mt-0 lg:mx-4 bg-[#FFF9E5] p-4 lg:p-6 rounded-lg shadow">
+        <div className="  mt-8 lg:mt-0 lg:mx-8 bg-[#FFF9E5] px-2 py-4  lg:p-6 rounded-lg shadow">
           <h2 className="text-2xl lg:text-3xl font-semibold my-4 lg:my-8 mb-8 text-center">
             Cart Totals
           </h2>
-          <div className="flex justify-between mb-2 lg:mb-4">
+          <div className=" mr-5 flex justify-between mb-2 lg:mb-4 ">
             <span>Subtotal</span>
             <span>Rs. {getCartTotal().toLocaleString()}</span>
           </div>
-          <div className="flex justify-between font-bold text-lg">
+          <div className=" mr-5 flex justify-between font-bold text-lg">
             <span>Total</span>
             <span>Rs. {getCartTotal().toLocaleString()}</span>
           </div>

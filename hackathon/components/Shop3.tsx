@@ -40,7 +40,7 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
   <Link href={`/shop/${product.id}`}>
     <div
-      className={`${poppins.className} my-8   bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 mx-auto`}
+      className={`${poppins.className} my-8   bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg   mx-auto`}
     >
       <Image
         src={product.image}

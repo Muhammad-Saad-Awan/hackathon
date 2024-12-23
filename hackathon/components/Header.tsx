@@ -52,6 +52,7 @@ const Header: React.FC = () => {
         }`}
       >
         <nav className="flex text-lg space-x-16 px-44">
+          
           <Link href="/" className="hover:text-gray-600">
             Home
           </Link>
@@ -104,8 +105,8 @@ const Header: React.FC = () => {
       <header
         className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50`}
       >
-        <div className="flex justify-between items-center p-4 bg-white shadow-md">
-          <div className="text-xl font-semibold">Home Haven</div>
+        <div className="flex justify-between items-center py-4 px-2 bg-white shadow-md">
+          <div className="text-lg  font-semibold text-nowrap ">Home Haven</div>
           <div className="flex items-center space-x-4">
             <div className="flex justify-around space-x-4">
               <button className="hover:text-gray-600 ">

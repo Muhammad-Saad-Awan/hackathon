@@ -10,7 +10,7 @@ export default function Cart1(){
     return(
         
              <section
-      className={`${poppins.className} relative w-full  flex items-center justify-center  mt-20 p-8 text-black `}
+      className={`${poppins.className} relative   flex items-center justify-center max-sm:mt-14  mt-20 p-8 text-black `}
     >
       <Image
         src="/icons/Shop.png"

@@ -28,7 +28,7 @@ export default function Third() {
           <div className="text-2xl  mb-2">New Arrivals</div>
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Asgaard Sofa</h1>
           <button className="border-2 border-black text-xl px-6 py-2">
-            <Link href="">Order Now</Link>
+            <Link href="/shop">Order Now</Link>
           </button>
         </div>
       </div>

@@ -24,7 +24,7 @@ export default function First() {
         <h1 className="text-4xl max-md:text-2xl pb-4 text-center">
           Side Table
         </h1>
-        <button className="border-b-2 border-black text-2xl max-md:text-lg">
+        <button className="border-b-2 border-black text-2xl max-md:text-lg  hover:bg-black hover:text-white px-4 rounded-md">
           <Link href="/shop">View More</Link>
         </button>
       </div>
@@ -41,7 +41,7 @@ export default function First() {
         <h1 className="text-4xl max-md:text-2xl pb-4 text-center">
           Side Table
         </h1>
-        <button className="border-b-2 border-black text-2xl max-md:text-l">
+        <button className="border-b-2 border-black text-2xl max-md:text-l  hover:bg-black hover:text-white px-4 rounded-md">
           <Link href="/shop">View More</Link>
         </button>
       </div>

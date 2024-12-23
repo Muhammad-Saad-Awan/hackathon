@@ -21,7 +21,7 @@ export default function Fourth() {
         <h3 className="text-xl max-md:text-lg text-nowrap  my-4 mt-12">
           Going all-in with millennial design
         </h3>
-        <button className=" border-b-2 border-b-black  hover:bg-blue-600  px-4 py-2 text-2xl  text-nowrap font-semibold ">
+        <button className=" border-b-2 border-b-black   hover:bg-black hover:text-white  px-4 py-2 text-2xl  text-nowrap font-semibold ">
           Read More
         </button>
         <div className="flex flex-row gap-4 pt-5 justify-center ">
@@ -39,7 +39,7 @@ export default function Fourth() {
         <h3 className="text-xl max-md:text-lg text-nowrap  my-4 mt-12">
           Going all-in with millennial design
         </h3>
-        <button className=" border-b-2 border-b-black  hover:bg-blue-600  px-4 py-2 text-2xl  text-nowrap font-semibold ">
+        <button className=" border-b-2 border-b-black  hover:bg-black hover:text-white  px-4 py-2 text-2xl  text-nowrap font-semibold ">
           Read More
         </button>
         <div className="flex flex-row gap-4 pt-5 justify-center">
@@ -57,7 +57,7 @@ export default function Fourth() {
         <h3 className="text-xl max-md:text-lg text-nowrap  my-4 mt-12">
           Going all-in with millennial design
         </h3>
-        <button className=" border-b-2 border-b-black  hover:bg-blue-600  px-4 py-2 text-2xl font-semibold">
+        <button className=" border-b-2 border-b-black    hover:bg-black hover:text-white px-4 py-2 text-2xl font-semibold">
           Read More
         </button>
         <div className="flex flex-row gap-4 pt-5 justify-center ">
