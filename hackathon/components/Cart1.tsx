@@ -38,7 +38,7 @@ export default function Cart1(){
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link className="font-semibold" href="">  Home &gt; Cart</Link>
+        <Link className="font-semibold" href="/cart">  Home &gt; <span className="font-light">Cart</span> </Link>
         </button>
       </div>
       

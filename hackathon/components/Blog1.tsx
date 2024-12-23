@@ -6,7 +6,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
-export default function About1(){
+export default function Blog1(){
     return(
         
              <section
@@ -34,11 +34,11 @@ export default function About1(){
         className="" 
       />
         <h1 className="text-4xl lg:text-5xl font-semibold mb-3 text-nowrap  ">
-        About
+            Blog
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-        <Link className="font-semibold" href="/about">  Home &gt; <span className="font-light">About</span> </Link>
+        <Link className="font-semibold" href="/blog">  Home &gt; <span className="font-light">Blog</span> </Link>
         </button>
       </div>
       

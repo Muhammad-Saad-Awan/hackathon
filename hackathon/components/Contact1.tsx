@@ -38,7 +38,7 @@ export default function Contact1(){
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link className="font-light" href="">  Home &gt; Contact</Link>
+        <Link className="font-semibold" href="/contact">  Home &gt; <span className="font-light">Contact</span> </Link>
         </button>
       </div>
       

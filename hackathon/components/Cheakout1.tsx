@@ -38,7 +38,7 @@ export default function Cheakout1(){
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link className="font-semibold" href="">  Home &gt;  Cheakout</Link>
+        <Link className="font-semibold" href="/cheakout">  Home &gt; <span className="font-light">Cheakout</span> </Link>
         </button>
       </div>
       

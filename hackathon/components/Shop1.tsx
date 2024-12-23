@@ -38,7 +38,7 @@ export default function Shop1(){
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link className="font-semibold" href="">  Home &gt;  Shop</Link>
+          <Link className="font-semibold" href="/shop">  Home &gt; <span className="font-light">Shop</span> </Link>
         </button>
       </div>
       

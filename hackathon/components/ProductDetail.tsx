@@ -1,4 +1,3 @@
- // ProductDetail.tsx
 "use client";
 import React, { useState } from "react";
 import { Star, Facebook, Linkedin, Twitter } from "lucide-react";
@@ -40,7 +39,7 @@ const ProductDetail = ({
       quantity,
       image: imgSrc,
     });
-    alert(`${name} has been added to your cart!`);
+    alert(`${name}Added Successfully!`);
   };
 
   const handleQuantityChange = (change: number) => {
@@ -74,7 +73,7 @@ const ProductDetail = ({
               alt={name}
               width={1000}
               height={1000}
-              className="w-full h-[30rem] bg-[#FFF9E5] object-cover rounded-lg"
+              className="w-full h-[30rem] bg-[#FFF9E5] rounded-lg"
             />
           </div>
 
@@ -87,7 +86,7 @@ const ProductDetail = ({
                 width={100}
                 height={100}
                 alt={`Product view ${index + 1}`}
-                className="w-full h-20 object-cover rounded-md cursor-pointer bg-[#FFF9E5]"
+                className="w-full h-20  rounded-md cursor-pointer bg-[#FFF9E5]"
               />
             ))}
           </div>

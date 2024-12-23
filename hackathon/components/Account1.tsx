@@ -38,7 +38,7 @@ export default function Account1(){
         </h1>
         
         <button className="  text-xl py-2 flex justify-center  ">
-          <Link className="font-semibold" href="">  Home &gt; My Account</Link>
+        <Link className="font-semibold" href="/account">  Home &gt; <span className="font-light">Account</span> </Link>
         </button>
       </div>
       

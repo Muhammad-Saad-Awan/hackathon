@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Poppins } from "next/font/google";
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function Fourth() {
           Going all-in with millennial design
         </h3>
         <button className=" border-b-2 border-b-black   hover:bg-black hover:text-white  px-4 py-2 text-2xl  text-nowrap font-semibold ">
+          <Link href="/blog">
           Read More
+          </Link>
         </button>
         <div className="flex flex-row gap-4 pt-5 justify-center ">
           <p className="text-gray-600 mb-4">5 min</p>
@@ -40,7 +43,9 @@ export default function Fourth() {
           Going all-in with millennial design
         </h3>
         <button className=" border-b-2 border-b-black  hover:bg-black hover:text-white  px-4 py-2 text-2xl  text-nowrap font-semibold ">
+        <Link href="/blog">
           Read More
+          </Link>
         </button>
         <div className="flex flex-row gap-4 pt-5 justify-center">
           <p className="text-gray-600 mb-4">5 min</p>
@@ -58,7 +63,9 @@ export default function Fourth() {
           Going all-in with millennial design
         </h3>
         <button className=" border-b-2 border-b-black    hover:bg-black hover:text-white px-4 py-2 text-2xl font-semibold">
+        <Link href="/blog">
           Read More
+          </Link>
         </button>
         <div className="flex flex-row gap-4 pt-5 justify-center ">
           <p className="text-gray-600 mb-4">5 min</p>
