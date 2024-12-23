@@ -51,7 +51,7 @@ export default function Account2(){
   </div>
 </div>
 
-            <div className="bg-[#FAF4F4] p-6 sm:p-10 md:p-16 lg:p-24 flex flex-row max-md:flex-col max-md:items-center max-md:text-center max-md:gap-y-5 justify-between my-4">
+            <div className="bg-[#FAF4F4] p-6 sm:p-10 md:p-16 lg:p-24 flex flex-row max-md:flex-col max-md:items-center max-md:text-center max-md:gap-y-5 justify-between my-4  text-black ">
       <div className="mx-2 sm:mx-3 md:mx-4 lg:mx-5 max-w-xs">
         <h1 className="text-xl sm:text-2xl font-bold py-1">Free Delivery</h1>
         <p className="text-base sm:text-lg text-gray-700">For all orders over $50, consectetur adipiscing elit.</p>

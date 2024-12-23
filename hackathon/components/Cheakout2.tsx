@@ -57,7 +57,7 @@ const BillingDetailsForm: React.FC<BillingDetailsFormProps> = ({
   };
 
   return (
-    <div className={`${poppins.className} max-w-6xl mx-auto p-6 mt-6`}>
+    <div className={`${poppins.className} max-w-6xl mx-auto p-6 mt-6  text-black `}>
       <h1 className="text-2xl font-bold mb-8">Billing details</h1>
       
       <div className="flex flex-col lg:flex-row gap-8">

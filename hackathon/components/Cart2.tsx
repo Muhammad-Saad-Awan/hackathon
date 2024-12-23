@@ -15,7 +15,7 @@ const AddToCart: React.FC = () => {
 
   return (
     <div className={`${poppins.className}`}>
-      <div className=" py-4 lg:p-8 flex flex-col lg:flex-row justify-between   mt-8">
+      <div className=" py-4 lg:p-8 flex flex-col lg:flex-row justify-between  text-black    mt-8">
         {/* Cart Items Table */}
         <div className="w-full lg:w-2/3">
           <table className="w-full border-collapse">

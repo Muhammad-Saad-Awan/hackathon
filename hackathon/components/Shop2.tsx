@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 export default function ShopFilter() {
   return (
-    <div className={`${poppins.className} bg-[#FAF4F4] h-auto py-4 text-black text-nowrap`}>
+    <div className={`${poppins.className} bg-[#FAF4F4] h-auto py-4 text-black text-nowrap `}>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-baseline px-4 sm:px-16">
         <div className="col-span-full flex flex-col sm:flex-row justify-between items-start w-full space-y-4 sm:space-y-0">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-7 w-full">

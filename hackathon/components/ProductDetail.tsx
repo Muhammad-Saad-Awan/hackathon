@@ -65,7 +65,7 @@ const ProductDetail = ({
 
   return (
     <Container>
-      <div className={`${poppins.className} mt-20 lg:mx-24 w-full mx-auto md:px-4 py-8 grid justify-between md:grid-cols-2 gap-8`}>
+      <div className={`${poppins.className} mt-20 lg:mx-24 w-full mx-auto md:px-4 py-8 grid justify-between md:grid-cols-2 gap-8  text-black `}>
         {/* Image Gallery */}
         <div className="flex gap-2 w-full max-md:flex-col">
           <div className="md:order-2 p-2">
