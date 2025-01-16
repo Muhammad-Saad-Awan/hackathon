@@ -28,6 +28,8 @@ const Header: React.FC = () => {
       setLastScrollY(currentScrollY);
     };
 
+    
+
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
