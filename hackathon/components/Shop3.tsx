@@ -33,8 +33,7 @@ function urlFor(source: any) {
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const imageSource =
     product.imagePath || (product.image ? urlFor(product.image).url() : "/placeholder.jpg");
-  const hasDiscount =
-    typeof product.discountPercentage === "number" && product.discountPercentage > 0;
+  const hasDiscount = product.discountPercentage !== undefined && product.discountPercentage > 0;
 
   return (
     <Link href={`/shop/${product.id}`}>
@@ -64,7 +63,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             Rs. {product.price.toLocaleString()}
             {hasDiscount && (
               <span className="text-sm text-red-500 ml-2 line-through">
-                Rs. {(product.price / (1 - product.discountPercentage / 100)).toFixed(2)}
+                Rs. {(product.price / (1 - (product.discountPercentage || 0) / 100)).toFixed(2)}
               </span>
             )}
           </p>
@@ -91,7 +90,6 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     </Link>
   );
 };
-
 const Shop3: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
