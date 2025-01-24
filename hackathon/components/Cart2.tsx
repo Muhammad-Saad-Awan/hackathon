@@ -4,6 +4,7 @@ import React from "react";
 import { Poppins } from "next/font/google";
 import { useCart } from "./CardContext";
 import Link from "next/link";
+import Image from "next/image";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,10 +33,12 @@ const AddToCart: React.FC = () => {
               {cartItems.map((item) => (
                 <tr key={item.id} className="border-b">
                   <td className="p-2 lg:p-4 flex flex-col  items-center gap-2 text-[#9F9F9F]">
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.name}
-                      className="w-14 h-14 lg:w-16 lg:h-16 rounded"
+                      width={14}
+                      height={14}
+                      className="lg:w-16 lg:h-16 rounded"
                     />
                     <span className="text-sm lg:text-base">{item.name}</span>
                   </td>
