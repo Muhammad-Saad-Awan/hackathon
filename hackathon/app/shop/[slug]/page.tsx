@@ -7,6 +7,7 @@ interface ProductPageProps {
   params: { slug: string };
 }
 
+// Fix for type compatibility
 export default async function ProductPage({ params }: ProductPageProps) {
   const { slug } = params;
 
@@ -34,7 +35,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <ProductSection
           title="Related Products"
           btnText="View All Products"
-          relatedProducts={relatedProducts} // Pass related products here
+          relatedProducts={relatedProducts}
         />
       )}
     </div>
