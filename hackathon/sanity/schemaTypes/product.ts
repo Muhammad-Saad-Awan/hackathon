@@ -15,6 +15,15 @@ export default {
         type: 'string',
       },
       {
+        name: "slug",
+        type: "slug",
+        title: "Slug",
+        options: {
+          source: "name", // or any field that generates the slug
+          maxLength: 96,
+        },
+      },
+      {
         name: 'image',
         title: 'Image',
         type: 'image',

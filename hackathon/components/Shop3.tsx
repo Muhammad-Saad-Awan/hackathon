@@ -12,7 +12,7 @@ const poppins = Poppins({
   weight: ["400", "600", "700"],
 });
 
-interface Product {
+export interface Product {
   _id: string;
   id: string;
   name: string;
@@ -24,6 +24,10 @@ interface Product {
   isFeaturedProduct: boolean;
   stockLevel: number;
   category: string;
+  slug: {
+    _type: "slug";
+    current: string;
+  };
 }
 
 function urlFor(source: any) {
@@ -36,7 +40,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const hasDiscount = product.discountPercentage !== undefined && product.discountPercentage > 0;
 
   return (
-    <Link href={`/shop/${product.id}`}>
+    <Link href={`/shop/${product.slug.current}`}>
       <div
         className={`${poppins.className} my-8 bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg text-black mx-auto relative`}
       >
@@ -90,6 +94,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     </Link>
   );
 };
+
 const Shop3: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -98,7 +103,7 @@ const Shop3: React.FC = () => {
     const fetchProducts = async () => {
       try {
         const result = await client.fetch(`
-          *[_type == "product"] {
+          *[_type == "product" && defined(slug.current)] {
             _id,
             id,
             name,
@@ -109,7 +114,8 @@ const Shop3: React.FC = () => {
             discountPercentage,
             isFeaturedProduct,
             stockLevel,
-            category
+            category,
+            slug
           }
         `);
         setProducts(result);
