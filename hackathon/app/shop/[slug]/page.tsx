@@ -3,13 +3,12 @@ import { getProduct, getRelatedProducts } from "@/sanity/lib/sanityQueries";
 import ProductDetail from "@/components/ProductDetail";
 import ProductSection from "@/components/home/ProductSection";
 
-interface ProductPageProps {
-  params: { slug: string };
+interface PageProps {
+  params: Promise<{ slug: string }>; 
 }
 
-// Fix for type compatibility
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = params;
+export default async function ProductPage({ params }: PageProps) {
+  const { slug } = await params; 
 
   // Fetch the product based on the slug
   const product = await getProduct(slug);
@@ -27,11 +26,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
   // Fetch related products based on the product's category
   const relatedProducts = await getRelatedProducts(product.category, product.id);
 
-  // Render the product details and related products section
+  // Render the product details and related products section (if any)
   return (
     <div className="mt-20 lg:mx-24 w-full mx-auto">
       <ProductDetail product={product} />
-      {relatedProducts.length > 0 && (
+      {relatedProducts.length > 0 && ( // Check if there are related products
         <ProductSection
           title="Related Products"
           btnText="View All Products"
