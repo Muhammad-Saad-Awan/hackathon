@@ -10,7 +10,7 @@ interface ProductDetailProps {
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   return (
-    <div className="flex flex-row-reverse w-[80%] mx-auto ml-10 justify-center mt-28 gap-2 max-md:flex-col">
+    <div className="flex flex-row-reverse w-[80%] mx-auto ml-10 justify-center mt-28 gap-2 max-md:flex-col-reverse">
         <ProductCard product={product} />
         <div className="flex gap-2  max-md:flex-col">
       <div className="md:order-2 p-2">
