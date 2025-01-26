@@ -3,6 +3,13 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@/components/Shop3";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
 
 interface ProductDetailProps {
   product: Product;
@@ -10,7 +17,7 @@ interface ProductDetailProps {
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
   return (
-    <div className="flex flex-row-reverse w-[80%] mx-auto ml-10 justify-center mt-28 gap-2 max-md:flex-col-reverse">
+    <div className={` ${poppins.className} flex flex-row-reverse w-full mx-auto ml-10 justify-center mt-28 gap-2 max-md:flex-col`}>
         <ProductCard product={product} />
         <div className="flex gap-2  max-md:flex-col">
       <div className="md:order-2 p-2">

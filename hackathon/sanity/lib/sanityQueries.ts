@@ -26,7 +26,7 @@ export async function getRelatedProducts(
   excludeId: string
 ): Promise<Product[]> {
   return client.fetch(
-    groq`*[_type == "product" && category == $category && id != $excludeId][0...4] {
+    groq`*[_type == "product" && category == $category && id != $excludeId][0...5] {
       _id,
       id,
       name,
