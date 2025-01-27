@@ -28,9 +28,9 @@ export default async function ProductPage({ params }: PageProps) {
 
   // Render the product details and related products section (if any)
   return (
-    <div className="mt-20 lg:mx-24 w-full mx-auto">
+    <div className="mt-20 lg:mx-24 w-full mx-auto  ">
       <ProductDetail product={product} />
-      {relatedProducts.length > 0 && ( // Check if there are related products
+      {relatedProducts.length > 0 && (  
         <ProductSection
           title="Related Products"
           btnText="View All Products"

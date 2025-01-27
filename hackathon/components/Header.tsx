@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
+import { useCart } from "./CardContext"; // Assuming you have this context set up
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,6 +14,7 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const { cartItems } = useCart(); // Fetching cart items from the context
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +29,6 @@ const Header: React.FC = () => {
 
       setLastScrollY(currentScrollY);
     };
-
-    
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -54,7 +54,6 @@ const Header: React.FC = () => {
         }`}
       >
         <nav className="flex text-lg space-x-16 px-44">
-          
           <Link href="/" className="hover:text-gray-600">
             Home
           </Link>
@@ -90,7 +89,7 @@ const Header: React.FC = () => {
               height={28}
             />
           </button>
-          <button className="hover:text-gray-600">
+          <button className="relative hover:text-gray-600">
             <Link href="/cart">
               <Image
                 src="/icons/addtocard.png"
@@ -99,6 +98,11 @@ const Header: React.FC = () => {
                 height={28}
               />
             </Link>
+            {cartItems.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {cartItems.length}
+              </span>
+            )}
           </button>
         </div>
       </header>
@@ -108,7 +112,7 @@ const Header: React.FC = () => {
         className={`${poppins.className} md:hidden fixed top-0 left-0 right-0 z-50`}
       >
         <div className="flex justify-between items-center py-4 px-2 bg-white shadow-md">
-          <div className="text-lg  font-semibold text-nowrap ">Home Haven</div>
+          <div className="text-lg font-semibold text-nowrap ">Home Haven</div>
           <div className="flex items-center space-x-4">
             <div className="flex justify-around space-x-4">
               <button className="hover:text-gray-600 ">
@@ -137,7 +141,7 @@ const Header: React.FC = () => {
                   height={22}
                 />
               </button>
-              <button className="hover:text-gray-600">
+              <button className="relative hover:text-gray-600">
                 <Link href="/cart">
                   <Image
                     src="/icons/addtocard.png"
@@ -146,6 +150,11 @@ const Header: React.FC = () => {
                     height={22}
                   />
                 </Link>
+                {cartItems.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                    {cartItems.length}
+                  </span>
+                )}
               </button>
             </div>
             <button onClick={toggleMobileMenu} className="focus:outline-none">

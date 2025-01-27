@@ -34,8 +34,9 @@ export default function RootLayout({
 
       <CartProvider>
       {children}
-     </CartProvider>
+      
         <Header></Header>
+        </CartProvider>
         <Footer></Footer>
       </body>
     </html>
