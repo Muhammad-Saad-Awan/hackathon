@@ -1,0 +1,11 @@
+Test Case ID,Test Scenario,Test Steps,Expected Result,Actual Result,Status
+TC001,Verify website loads successfully,Open the URL in a browser,Website loads without errors,Website loaded successfully,Pass
+TC002,Check website responsiveness,Resize the browser window to different screen sizes,Website adjusts layout correctly,Website is responsive,Pass
+TC003,Verify navigation links,Click on all navigation links,Navigation links redirect to correct pages,All links work as expected,Pass
+TC004,Test contact form submission,Fill out the contact form and submit,Form submission is successful,Form submitted successfully,Pass
+TC005,Verify page load speed,Measure load time using browser tools,Page loads within acceptable time,Page loads quickly,Pass
+TC006,Check broken links,Run a broken link checker,No broken links found,No broken links found,Pass
+TC007,Verify accessibility features,"Check alt text, keyboard navigation, etc.",Website meets accessibility standards,Accessibility features present,Pass
+TC008,Validate website SEO,"Check meta tags, titles, and descriptions",SEO elements are properly implemented,SEO is optimized,Pass
+TC009,Test footer links,Click on all footer links,Footer links redirect to correct pages,All footer links work as expected,Pass
+TC010,Verify social media links,Click on social media icons,Icons redirect to correct social media profiles,Links redirect properly,Pass
